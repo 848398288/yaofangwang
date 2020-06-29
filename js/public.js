@@ -335,7 +335,8 @@ class nav_all {
 	}
 	createDom() {
 		let nav = $(
-			`<div class="header-wrapper w clear_fix">
+			`<div id="head-wrap">
+			<div class="header-wrapper w clear_fix">
 			<div class="nav-all">
 				<a href="#">
 					全部商品分类
@@ -362,8 +363,156 @@ class nav_all {
 				</li>
 			</ul>
 			
+		</div>
 		</div>`
 		);
 		$("body").append(nav);
+	}
+}
+class footer{
+	constructor() {}
+	init() {
+		this.createDom();
+	}
+	createDom() {
+		let footer = $(
+			`<div id="footer">
+			<div class="foot-top">
+				<div class="host">
+					<div class="w clear_fix">
+						<h2>
+							<i class="iconfont icon-dianhua2"></i>
+							<span>
+								咨询热线：
+								<strong>400-650-9988</strong>
+							</span>
+						</h2>
+						<dl>
+							<dt>招商热线：</dt>
+							<dd>
+								<span>雷女士 : 18618373199</span>
+								<span>马女士 ：15811299026</span>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="foot-link w clear_fix">
+					<div class="foot-code">
+						<img src="img/footer_code1.jpg" >
+						<span>仁和药房网微信订阅号</span>
+					</div>
+					<dl>
+						<dt>购物指南</dt>
+						<dd>
+							<a href="#">购物流程</a>
+							<a href="#">用户协议</a>
+							<a href="#">会员介绍</a>
+							<a href="#">积分说明</a>
+							<a href="#">订单状态</a>
+							<a href="#">优惠券</a>
+							<a href="#">常见问题</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>配送方式</dt>
+						<dd>
+							<a href="#">自提说明</a>
+							<a href="#">送货上门</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>售后服务</dt>
+						<dd>
+							<a href="#">接收验货</a>
+							<a href="#">退换货政策</a>
+							<a href="#">退换货流程</a>
+							<a href="#">退款说明</a>
+							<a href="#">发票说明</a>
+							<a href="#">联系客服</a>
+							<a href="#">食品安全制度</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>支付方式</dt>
+						<dd>
+							<a href="#">货到付款</a>
+							<a href="#">在线支付</a>
+							<a href="#">银行转帐</a>
+							<a href="#">支票付款</a>
+							<a href="#">预存消费</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>特色服务</dt>
+						<dd>
+							<a href="#">用药咨询</a>
+							<a href="#">连锁招商</a>
+							<a href="#">寻医问药</a>
+						</dd>
+					</dl>
+				</div>
+				
+			</div>
+			
+			<div class="foot-bottom w">
+				<ul class="clear_fix">
+					<li>
+						<i class="iconfont icon-zheng"></i>
+						正品保障
+					</li>
+					<li>
+						<i class="iconfont icon-shou"></i>
+						品牌授权
+					</li>
+					<li>
+						<i class="iconfont icon-zheng1"></i>
+						平台认证
+					</li>
+					<li>
+						<i class="iconfont icon-mian"></i>
+						天天省钱
+					</li>
+				</ul>
+				
+				<div class="foot-nav w">
+					<a href="#">首页</a>
+					<b></b>
+					<a href="#">关于本站</a>
+					<b></b>
+					<a href="#">荣誉证书</a>
+					<b></b>
+					<a href="#">媒体报道</a>
+					<b></b>
+					<a href="#">联系我们</a>
+					<b></b>
+					<a href="#">人才招聘</a>
+					<b></b>
+					<a href="#">友情链接</a>
+				</div>
+				<div class="foot-nav w">
+					<a href="#">互联网药品信息服务资格证书：（京）-经营性-2018-0221</a>
+					<b></b>
+					<a href="#">互联网药品交易服务资格证书：京C20160005</a>
+					<b></b>
+					<a href="#">京丰食药监械经营许20150100号</a>
+					<br>
+					<a href="#">京丰食药监械经营备20150159号</a>
+					<b></b>
+					<a href="#">增值电信业务经营许可证：京B2-20180434</a>
+					<b></b>
+					<a href="#">食品药品投诉举报热线：12331</a>
+					<br>
+				</div>
+				<p>Copyright©2005-2019 仁和药房网（北京）医药科技有限公司版权所有，并保留所有权利。互联网药品交易服务证：京C20160005号</p>
+				<p>京公网安备 11010602100232号    （ICP证、EDI证已二证合一）增值电信业务经营许可证：京B2-20180434 移动版</p>
+				
+				<div class="foot-img">
+					<img src="img/foot-img.jpg" >
+				</div>
+				
+			</div>
+		</div>`
+		);
+		$("body").append(footer);
 	}
 }
