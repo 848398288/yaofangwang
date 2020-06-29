@@ -1,0 +1,169 @@
+@charset "utf-8";
+.reg-head{
+	height: 120px;
+	padding-top: 35px;
+}
+.reg_link{
+	padding-top: 15px;
+	color: #999;
+	font-size: 14px;
+}
+.reg_link a{
+	color: #007AFF;
+}
+.reg-content{
+	width: 1100px;
+	padding: 40px 0 60px 100px;
+	background-color: #f8fcff;
+	border:1px solid #acd4f1;
+}
+.reg-content form h1{
+	padding: 0 30px;
+	border-bottom: 2px solid #ccc;
+	line-height: 40px;
+	height: 40px;
+	margin-bottom: 45px;
+	margin-right: 100px;
+}
+.reg-content form h1 span{
+	display: inline-block;
+	border-bottom: 2px solid #0c69ae;
+	font-size: 18px;
+	color: #0c69ae;
+}
+.reg-content form ul li{
+	margin-bottom: 10px;
+	height: 77px;
+}
+.reg-content form ul li span{
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 20px;
+	width: 130px;
+	text-align: right;
+	font-size: 14px;
+}
+.reg-content form ul li input{
+	float: left;
+	width: 350px;
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #cfcfcf;
+}
+.reg-content form ul li .agree{
+	float: left;
+	width: 13px;
+	height: 13px;
+	vertical-align: middle;
+}
+.reg-content form ul li  strong{
+	float: left;
+	vertical-align: middle;
+	line-height: 13px;
+	color: red;
+	font-size: 14px;
+}
+.reg-content form ul li .btn{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	background-color: #1d8bd7;
+	color: #fff;
+	cursor: pointer;
+}
+.reg-foot{
+	padding: 50px 0;
+}
+.reg-foot p{
+	text-align: center;
+	color: #5b5b5b;
+	line-height: 25px;
+	font-size: 12px;
+}
+
+
+/* 登录区域 */
+.login{
+	height: 487px;
+	background: url(../img/login_bg.jpg) no-repeat center top #45a9c9;
+}
+.login .slogan{
+	float: left;
+}
+.login .slogan img{
+	margin: 25px 0 0 50px;
+}
+.login .login-content{
+	float: right;
+	width: 350px;
+	padding: 20px 15px;
+	margin: 40px 0;
+	background-color: #fff;
+}
+.login .login-content h2{
+	text-align: center;
+	font-size: 18px;
+	height: 30px;
+	border-bottom:2px solid #0c69ae;
+	color: #0c69ae;
+	margin-bottom: 25px;
+}
+.login .login-content li{
+	height: 40px;
+	width: 310px;
+	line-height: 40px;
+	border: 1px solid #cfcfcf;
+	margin: 0 auto 25px auto;
+}
+.login .login-content li i{
+	font-size: 24px;
+	margin-left: 10px;
+	color: #999;
+	float: left;
+	width: 25px;
+}
+.login .login-content li input{
+	width: 218px;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	border: none;
+	background: none;
+}
+.login .login-content button{
+	display: block;
+	width: 310px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 auto;
+	font-size: 16px;
+	color: #fff;
+	background-color: #1d8bd7;
+	border: none;
+	outline: none;
+}
+.login .login-content button:hover{
+	opacity: .8;
+	cursor: pointer;
+}
+.login .login-content .other_login{
+	margin-top: 25px;
+	font-size: 14px;
+	border: none;
+}
+.login .login-content .other_login i{
+	float: none;
+	vertical-align: middle;
+	font-size: 30px;
+}
+.login .login-content .other_login i:nth-of-type(1){
+	color: #65a3de;
+}
+.login .login-content .other_login i:nth-of-type(2){
+	color: #08BA06;
+}

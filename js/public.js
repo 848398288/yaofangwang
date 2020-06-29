@@ -157,10 +157,10 @@ class nav {
 			<div class="w  clear_fix">
 				<ul class="nav clear_fix">
 					<li>
-						<a href="">请登录</a>
+						<a href="login.html">请登录</a>
 					</li>
 					<li>
-						<a href="">注册</a>
+						<a href="register.html">注册</a>
 					</li>
 					<li class="show">
 						<strong>我的药房网<i class="iconfont icon-icon"></i></strong>
@@ -272,7 +272,7 @@ class nav {
 			</div>
 		</div>`
 		);
-		$("body").append(nav);
+		$("body").prepend(nav);
 	}
 	addEvent() {
 		new Swiper('.swiper', {
@@ -293,7 +293,7 @@ class seach {
 		let nav = $(
 			`<div class="head-search w clear_fix">
 			<div class="head-logo">
-				<a href="#">
+				<a href="index.html">
 					<img src="img/logo_1.png">
 				</a>
 			</div>

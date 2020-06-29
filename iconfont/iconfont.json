@@ -97,6 +97,13 @@
       "unicode_decimal": 58943
     },
     {
+      "icon_id": "1513759",
+      "name": "微信",
+      "font_class": "3-copy",
+      "unicode": "e505",
+      "unicode_decimal": 58629
+    },
+    {
       "icon_id": "1543898",
       "name": "个护-隐形眼镜",
       "font_class": "gehu-yinxingyanjing",
@@ -195,6 +202,13 @@
       "unicode_decimal": 58641
     },
     {
+      "icon_id": "3212718",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
       "icon_id": "3278965",
       "name": "健康",
       "font_class": "jiankang-",
@@ -249,6 +263,13 @@
       "font_class": "n-check",
       "unicode": "e619",
       "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "7552788",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
     },
     {
       "icon_id": "8288831",
