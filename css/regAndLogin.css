@@ -53,6 +53,12 @@
 	line-height: 40px;
 	border: 1px solid #cfcfcf;
 }
+.reg-content form ul li .msg{
+	line-height: 40px;
+	font-size: 16px;
+	color: red;
+}
+
 .reg-content form ul li .agree{
 	float: left;
 	width: 13px;
