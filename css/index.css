@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+.swiper-container {
+	width: 100%;
+	height: 424px;
+	overflow: hidden;
+	position: relative;
+}
+
+.swiper-container .swiper-wrapper {
+	position: absolute;
+	width: 1920px;
+	height: 424px;
+}
+
+.swiper-container .swiper-slide {
+	width: 1920px;
+	height: 424px;
+}
+
+.swiper-container .swiper-slide img {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-container .swiper-button-prev {
+	position: absolute;
+	left: 300px;
+	background-color: #ccc;
+}
+
+.swiper-container .swiper-button-next {
+	position: absolute;
+	right: 300px;
+	background-color: #ccc;
+}
+.slideTxtBox .bd{
+	padding: 10px 0 30px 0;
+	height: 300px;
+}
+.slideTxtBox .bd li{
+	float: left;
+	text-align: center;
+	border: 1px solid #f0f0f0;
+	padding: 10px 14px;
+	padding-top: 0;
+	width: 210px;
+	transition: .4s;
+}
+.slideTxtBox .bd li:hover{
+	transform: translateY(-10px);
+}
+.slideTxtBox .bd li img{
+	width: 210px;
+	height: 210px;
+}
+.slideTxtBox .bd li h4{
+	line-height: 25px;
+	color: #333;
+	font-size: 14px;
+}
+.slideTxtBox .bd li h5{
+	color: #e53b46;
+	font-size: 18px;
+}
+
+/* 楼层部分 */
+.drug_floor{
+	margin-bottom: 40px;
+	min-height: 200px;
+}
+.drug_floor h3{
+	position: relative;
+	border-bottom: 2px solid #63c19f;
+}
+.drug_floor h3 span{
+	display: inline-block;
+	width: 190px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	background-color: #63c19f;
+}
+.drug_floor h3 span em{
+	margin-left: 10px;
+}
+.drug_floor .dFloor_keyWord{
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	line-height: 20px;
+	color: #ccc;
+}
+.drug_floor .dFloor_keyWord a{
+	padding: 0 10px;
+	color: #5b5b5b;
+	font-size: 14px;
+}
+.drug_floor .dFloor_keyWord a:hover{
+	color: #007AFF;
+}
+.drug_main .drug_left{
+	float: left;
+	width: 190px;
+	border-right: 1px solid #e9e9e9;
+}
+.drug_main .drug_right{
+	float: right;
+}
+.drug_main .drug_left a{
+	float: left;
+	text-align: center;
+	width: 94px;
+	height: 52px;
+	line-height: 52px;
+	border-bottom: 1px solid #e9e9e9;
+	border-left: 1px solid #e9e9e9;
+	color: #5b5b5b;
+}
+.drug_main .drug_left a:hover{
+	color: #007AFF;
+}
+.dRig_picScroll_drug{
+	background-color: #f2f2f2;
+}
+.dRig_picScroll{
+	float: left;
+	width: 605px;
+	height: 280px;
+}
+.dRig_picScroll img{
+	width: 100%;
+	height: 100%;
+}
+.dRig_drug{
+	float: right;
+	width: 400px;
+	height: 219px;
+	background-color: #f2f2f2;
+	padding-bottom: 20px;
+	padding-top: 35px;
+}
+.dRig_drug dl{
+	float: left;
+	width: 165px;
+	margin-left: 20px;
+}
+.dRig_drug dl dt{
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 15px;
+}
+.dRig_drug dl dt span{
+	display: block;
+	color: #e53b46;
+	font-size: 14px;
+	padding-top: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+}
+.dRig_drug dl dd img{
+	width: 165px;
+	height: 155px;
+}
+.dRig_drugList {
+	background-color: #fff;
+}
+.dRig_drugList dl{
+	float: left;
+	width: 180px;
+	text-align: center;
+	padding: 10px;
+	border-right: 1px solid #e9e9e9;
+}
+.dRig_drugList dl dt{
+	margin-bottom: 15px;
+	padding-top: 15px;
+	height: 100px;
+}
+.dRig_drugList dl dt img{
+	display: inline;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+}
+.dRig_drugList dl dd{
+	padding-bottom: 5px;
+}
+.dRig_drugList dl dd h4{
+	font-weight: 700;
+	color: #5b5b5b;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: 5px;
+}
+.dRig_drugList dl dd span{
+	color: #e53b46;
+	font-size: 16px;
+}
+.dRig_drug img,.dRig_drugList img{
+	transition: .5s;
+}
+.dRig_drug img:hover,.dRig_drugList img:hover{
+	transform: translateY(-10px);
+}

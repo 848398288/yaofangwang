@@ -325,48 +325,972 @@ class seach {
 			</div>
 		</div>`
 		);
-		$("body").append(nav);
+		$("body").prepend(nav);
 	}
 }
 class nav_all {
 	constructor() {}
 	init() {
 		this.createDom();
+		this.addEvent();
 	}
 	createDom() {
-		let nav = $(
-			`<div id="head-wrap">
-			<div class="header-wrapper w clear_fix">
-			<div class="nav-all">
-				<a href="#">
-					全部商品分类
-				</a>
-			</div>
-			<ul class="clear_fix">
-				<li>
-					<a href="#">首页</a>
-				</li>
-				<li>
-					<a href="#">新药特药进口药</a>
-				</li>
-				<li>
-					<a href="#">慈善援助</a>
-				</li>
-				<li>
-					<a href="#">慢性疾病</a>
-				</li>
-				<li>
-					<a href="#">常见疾病</a>
-				</li>
-				<li>
-					<a href="#">健康商城</a>
-				</li>
-			</ul>
+		let nav = $(`
+			<div id="head-wrap">
+				<div class="header-wrapper w clear_fix">
+					<div class="nav-all">
+						<a href="#">
+							全部商品分类
+						</a>
+						<div class="pullDown">
+							<ul>
+								<li>
+									<i class="iconfont icon-yaoping"></i>
+									<a href="#">重大疾病</a>丶
+									<a href="#">肿瘤</a>丶
+									<a href="#">肺癌</a>
+								</li>
+								<li>
+									<i class="iconfont icon-yao"></i>
+									<a href="#">新药特药</a>丶
+									<a href="#">血液</a>丶
+									<a href="#">罕见病</a>
+								</li>
+								<li>
+									<i class="iconfont icon-manxingjibing"></i>
+									<a href="#">慢性疾病</a>丶
+									<a href="#">三高</a>丶
+									<a href="#">男性健康</a>
+								</li>
+								<li>
+									<i class="iconfont icon-jiatingchangbei"></i>
+									<a href="#">家庭常备</a>丶
+									<a href="#">妇科</a>丶
+									<a href="#">儿科</a>
+								</li>
+								<li>
+									<i class="iconfont icon-zhongyike"></i>
+									<a href="#">中医养生</a>丶
+									<a href="#">草药</a>丶
+									<a href="#">参茸礼品</a>
+								</li>
+								<li>
+									<i class="iconfont icon-yingyangbaojian"></i>
+									<a href="#">医疗器械</a>丶
+									<a href="#">康复</a>丶
+									<a href="#">血压监测</a>
+								</li>
+								<li>
+									<i class="iconfont icon-jiankang-"></i>
+									<a href="#">营养保健</a>丶
+									<a href="#">减肥</a>丶
+									<a href="#">亚健康</a>
+								</li>
+								<li>
+									<i class="iconfont icon-jiankangfuwu"></i>
+									<a href="#">健康超市</a>丶
+									<a href="#">母婴</a>丶
+									<a href="#">化妆品</a>
+								</li>
+								<li>
+									<i class="iconfont icon-gehu-yinxingyanjing"></i>
+									<a href="#">健康服务</a>丶
+									<a href="#">挂号</a>丶
+									<a href="#">每康卡</a>
+								</li>
+								<li>
+									<i class="iconfont icon-yaoping"></i>
+									<a href="#">隐形眼镜</a>丶
+									<a href="#">美瞳</a>丶
+									<a href="#">护理液</a>
+								</li>
+							</ul>
+						</div>
 			
-		</div>
-		</div>`
-		);
-		$("body").append(nav);
+						<div class="yMenuListCon">
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肿瘤</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他病症</a>
+										<a href="list.html">肝癌</a>
+										<a href="list.html">骨髓瘤</a>
+										<a href="list.html">胃癌</a>
+										<a href="list.html">肺癌</a>
+										<a href="list.html">肾癌</a>
+										<a href="list.html">前列腺癌</a>
+										<a href="list.html">肿瘤病辅助</a>
+										<a href="list.html">乳腺癌</a>
+										<a href="list.html">卵巢癌</a>
+										<a href="list.html">淋巴肿瘤</a>
+										<a href="list.html">食道癌</a>
+										<a href="list.html">细胞瘤</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">调节免疫力</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">免疫调节药物</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">器官移植</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抗排异药物</a>
+									</dd>
+								</dl>
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">慢性病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">艾滋病</a>
+										<a href="list.html">皮肤疾病</a>
+										<a href="list.html">甲亢</a>
+										<a href="list.html">其他慢性病</a>
+										<a href="list.html">糖尿病</a>
+										<a href="list.html">心脑血管</a>
+										<a href="list.html">风湿骨痛</a>
+										<a href="list.html">肺纤维化</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">罕见病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">地中海贫血</a>
+										<a href="list.html">肺动脉高压</a>
+										<a href="list.html">肢端肥大症</a>
+										<a href="list.html">骨溶解骨痛</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">血液疾病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他血液疾病</a>
+										<a href="list.html">血友病</a>
+										<a href="list.html">高磷血症</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肝部疾病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">肝病</a>
+									</dd>
+								</dl>
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">神经系统</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">运动神经元疾病</a>
+									</dd>
+								</dl>
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">其他病症类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">子宫内膜异位症</a>
+									</dd>
+								</dl>
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">男科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">性功能障碍</a>
+										<a href="list.html">前列腺疾病</a>
+										<a href="list.html">补肾壮阳药</a>
+										<a href="list.html">滋阴补肾药</a>
+										<a href="list.html">雄激素补充</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">精神科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抑郁症用药</a>
+										<a href="list.html">精神分裂症用药</a>
+										<a href="list.html">神经衰弱用药</a>
+										<a href="list.html">睡眠障碍用药</a>
+										<a href="list.html">多动症用药</a>
+										<a href="list.html">焦虑症用药</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">心脑血管用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">高血压用药</a>
+										<a href="list.html">高血脂用药</a>
+										<a href="list.html">心脏及冠脉疾病</a>
+										<a href="list.html">脑血管疾病</a>
+										<a href="list.html">中风偏瘫类</a>
+										<a href="list.html">心脑血管疾病辅助药</a>
+										<a href="list.html">静脉曲张</a>
+										<a href="list.html">动脉闭塞</a>
+										<a href="list.html">血液类疾病</a>
+										<a href="list.html">眩晕症</a>
+										<a href="list.html">脉管炎</a>
+										<a href="list.html">肺心病</a>
+										<a href="list.html">心力衰竭</a>
+										<a href="list.html">预防血栓药</a>
+										<a href="list.html">改善微循环</a>
+										<a href="list.html">低血压用药</a>
+										<a href="list.html">造影剂</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">糖尿病类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抑</a>
+										<a href="list.html">口服降糖药</a>
+										<a href="list.html">注射降糖药</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肝胆胰类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">乙肝用药</a>
+										<a href="list.html">肝炎用药</a>
+										<a href="list.html">胆囊炎</a>
+										<a href="list.html">胆结石</a>
+										<a href="list.html">舒肝理气类</a>
+										<a href="list.html">降转氨酶</a>
+										<a href="list.html">脂肪肝</a>
+										<a href="list.html">肝病辅助治疗</a>
+										<a href="list.html">肝炎辅助治疗</a>
+										<a href="list.html">肝损伤</a>
+										<a href="list.html">黄疸及黄疸性肝炎</a>
+										<a href="list.html">肝癌辅助治疗</a>
+										<a href="list.html">胰腺炎/癌</a>
+										<a href="list.html">胰腺外分泌不足</a>
+										<a href="list.html">酒精性肝病</a>
+										<a href="list.html">肝功能衰退</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">泌尿科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">尿路感染用药</a>
+										<a href="list.html">肾炎用药</a>
+										<a href="list.html">肾结石用药</a>
+										<a href="list.html">尿路结石用药</a>
+										<a href="list.html">膀胱炎用药</a>
+										<a href="list.html">肾病综合症</a>
+										<a href="list.html">水肿</a>
+										<a href="list.html">肾衰竭</a>
+										<a href="list.html">尿崩症</a>
+										<a href="list.html">尿毒症</a>
+										<a href="list.html">辅助利尿</a>
+									</dd>
+								</dl>
+			
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">神经系统用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">头痛用药</a>
+										<a href="list.html">眩晕</a>
+										<a href="list.html">记忆减退</a>
+										<a href="list.html">老年性痴呆</a>
+										<a href="list.html">面瘫癫痫</a>
+										<a href="list.html">帕金森</a>
+										<a href="list.html">帕金森辅助治疗</a>
+										<a href="list.html">周围神经病变</a>
+										<a href="list.html">植物神经紊乱</a>
+										<a href="list.html">晕动症（晕车船）</a>
+										<a href="list.html">焦虑症（应在精神科用药二级分类）</a>
+										<a href="list.html">神经性疼痛</a>
+										<a href="list.html">肌肉无力萎缩</a>
+										<a href="list.html">神经性呕吐</a>
+										<a href="list.html">神经炎</a>
+										<a href="list.html">酒精中毒</a>
+										<a href="list.html">麻醉用药</a>
+										<a href="list.html">神经系统其他用药</a>
+									</dd>
+								</dl>
+			
+			
+							</div>
+			
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肿瘤</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他病症</a>
+										<a href="list.html">肝癌</a>
+										<a href="list.html">骨髓瘤</a>
+										<a href="list.html">胃癌</a>
+										<a href="list.html">肺癌</a>
+										<a href="list.html">肾癌</a>
+										<a href="list.html">前列腺癌</a>
+										<a href="list.html">肿瘤病辅助</a>
+										<a href="list.html">乳腺癌</a>
+										<a href="list.html">卵巢癌</a>
+										<a href="list.html">淋巴肿瘤</a>
+										<a href="list.html">食道癌</a>
+										<a href="list.html">细胞瘤</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">调节免疫力</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">免疫调节药物</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">器官移植</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抗排异药物</a>
+									</dd>
+								</dl>
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">慢性病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">艾滋病</a>
+										<a href="list.html">皮肤疾病</a>
+										<a href="list.html">甲亢</a>
+										<a href="list.html">其他慢性病</a>
+										<a href="list.html">糖尿病</a>
+										<a href="list.html">心脑血管</a>
+										<a href="list.html">风湿骨痛</a>
+										<a href="list.html">肺纤维化</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">罕见病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">地中海贫血</a>
+										<a href="list.html">肺动脉高压</a>
+										<a href="list.html">肢端肥大症</a>
+										<a href="list.html">骨溶解骨痛</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">血液疾病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他血液疾病</a>
+										<a href="list.html">血友病</a>
+										<a href="list.html">高磷血症</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肝部疾病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">肝病</a>
+									</dd>
+								</dl>
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">神经系统</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">运动神经元疾病</a>
+									</dd>
+								</dl>
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">其他病症类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">子宫内膜异位症</a>
+									</dd>
+								</dl>
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">男科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">性功能障碍</a>
+										<a href="list.html">前列腺疾病</a>
+										<a href="list.html">补肾壮阳药</a>
+										<a href="list.html">滋阴补肾药</a>
+										<a href="list.html">雄激素补充</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">精神科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抑郁症用药</a>
+										<a href="list.html">精神分裂症用药</a>
+										<a href="list.html">神经衰弱用药</a>
+										<a href="list.html">睡眠障碍用药</a>
+										<a href="list.html">多动症用药</a>
+										<a href="list.html">焦虑症用药</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">心脑血管用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">高血压用药</a>
+										<a href="list.html">高血脂用药</a>
+										<a href="list.html">心脏及冠脉疾病</a>
+										<a href="list.html">脑血管疾病</a>
+										<a href="list.html">中风偏瘫类</a>
+										<a href="list.html">心脑血管疾病辅助药</a>
+										<a href="list.html">静脉曲张</a>
+										<a href="list.html">动脉闭塞</a>
+										<a href="list.html">血液类疾病</a>
+										<a href="list.html">眩晕症</a>
+										<a href="list.html">脉管炎</a>
+										<a href="list.html">肺心病</a>
+										<a href="list.html">心力衰竭</a>
+										<a href="list.html">预防血栓药</a>
+										<a href="list.html">改善微循环</a>
+										<a href="list.html">低血压用药</a>
+										<a href="list.html">造影剂</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">糖尿病类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抑</a>
+										<a href="list.html">口服降糖药</a>
+										<a href="list.html">注射降糖药</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肝胆胰类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">乙肝用药</a>
+										<a href="list.html">肝炎用药</a>
+										<a href="list.html">胆囊炎</a>
+										<a href="list.html">胆结石</a>
+										<a href="list.html">舒肝理气类</a>
+										<a href="list.html">降转氨酶</a>
+										<a href="list.html">脂肪肝</a>
+										<a href="list.html">肝病辅助治疗</a>
+										<a href="list.html">肝炎辅助治疗</a>
+										<a href="list.html">肝损伤</a>
+										<a href="list.html">黄疸及黄疸性肝炎</a>
+										<a href="list.html">肝癌辅助治疗</a>
+										<a href="list.html">胰腺炎/癌</a>
+										<a href="list.html">胰腺外分泌不足</a>
+										<a href="list.html">酒精性肝病</a>
+										<a href="list.html">肝功能衰退</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">泌尿科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">尿路感染用药</a>
+										<a href="list.html">肾炎用药</a>
+										<a href="list.html">肾结石用药</a>
+										<a href="list.html">尿路结石用药</a>
+										<a href="list.html">膀胱炎用药</a>
+										<a href="list.html">肾病综合症</a>
+										<a href="list.html">水肿</a>
+										<a href="list.html">肾衰竭</a>
+										<a href="list.html">尿崩症</a>
+										<a href="list.html">尿毒症</a>
+										<a href="list.html">辅助利尿</a>
+									</dd>
+								</dl>
+			
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">神经系统用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">头痛用药</a>
+										<a href="list.html">眩晕</a>
+										<a href="list.html">记忆减退</a>
+										<a href="list.html">老年性痴呆</a>
+										<a href="list.html">面瘫癫痫</a>
+										<a href="list.html">帕金森</a>
+										<a href="list.html">帕金森辅助治疗</a>
+										<a href="list.html">周围神经病变</a>
+										<a href="list.html">植物神经紊乱</a>
+										<a href="list.html">晕动症（晕车船）</a>
+										<a href="list.html">焦虑症（应在精神科用药二级分类）</a>
+										<a href="list.html">神经性疼痛</a>
+										<a href="list.html">肌肉无力萎缩</a>
+										<a href="list.html">神经性呕吐</a>
+										<a href="list.html">神经炎</a>
+										<a href="list.html">酒精中毒</a>
+										<a href="list.html">麻醉用药</a>
+										<a href="list.html">神经系统其他用药</a>
+									</dd>
+								</dl>
+			
+			
+							</div>
+			
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肿瘤</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他病症</a>
+										<a href="list.html">肝癌</a>
+										<a href="list.html">骨髓瘤</a>
+										<a href="list.html">胃癌</a>
+										<a href="list.html">肺癌</a>
+										<a href="list.html">肾癌</a>
+										<a href="list.html">前列腺癌</a>
+										<a href="list.html">肿瘤病辅助</a>
+										<a href="list.html">乳腺癌</a>
+										<a href="list.html">卵巢癌</a>
+										<a href="list.html">淋巴肿瘤</a>
+										<a href="list.html">食道癌</a>
+										<a href="list.html">细胞瘤</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">调节免疫力</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">免疫调节药物</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">器官移植</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抗排异药物</a>
+									</dd>
+								</dl>
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">慢性病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">艾滋病</a>
+										<a href="list.html">皮肤疾病</a>
+										<a href="list.html">甲亢</a>
+										<a href="list.html">其他慢性病</a>
+										<a href="list.html">糖尿病</a>
+										<a href="list.html">心脑血管</a>
+										<a href="list.html">风湿骨痛</a>
+										<a href="list.html">肺纤维化</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">罕见病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">地中海贫血</a>
+										<a href="list.html">肺动脉高压</a>
+										<a href="list.html">肢端肥大症</a>
+										<a href="list.html">骨溶解骨痛</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">血液疾病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他血液疾病</a>
+										<a href="list.html">血友病</a>
+										<a href="list.html">高磷血症</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肝部疾病</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">肝病</a>
+									</dd>
+								</dl>
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">神经系统</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">运动神经元疾病</a>
+									</dd>
+								</dl>
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">其他病症类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">子宫内膜异位症</a>
+									</dd>
+								</dl>
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">男科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">性功能障碍</a>
+										<a href="list.html">前列腺疾病</a>
+										<a href="list.html">补肾壮阳药</a>
+										<a href="list.html">滋阴补肾药</a>
+										<a href="list.html">雄激素补充</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">精神科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抑郁症用药</a>
+										<a href="list.html">精神分裂症用药</a>
+										<a href="list.html">神经衰弱用药</a>
+										<a href="list.html">睡眠障碍用药</a>
+										<a href="list.html">多动症用药</a>
+										<a href="list.html">焦虑症用药</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">心脑血管用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">高血压用药</a>
+										<a href="list.html">高血脂用药</a>
+										<a href="list.html">心脏及冠脉疾病</a>
+										<a href="list.html">脑血管疾病</a>
+										<a href="list.html">中风偏瘫类</a>
+										<a href="list.html">心脑血管疾病辅助药</a>
+										<a href="list.html">静脉曲张</a>
+										<a href="list.html">动脉闭塞</a>
+										<a href="list.html">血液类疾病</a>
+										<a href="list.html">眩晕症</a>
+										<a href="list.html">脉管炎</a>
+										<a href="list.html">肺心病</a>
+										<a href="list.html">心力衰竭</a>
+										<a href="list.html">预防血栓药</a>
+										<a href="list.html">改善微循环</a>
+										<a href="list.html">低血压用药</a>
+										<a href="list.html">造影剂</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">糖尿病类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抑</a>
+										<a href="list.html">口服降糖药</a>
+										<a href="list.html">注射降糖药</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肝胆胰类</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">乙肝用药</a>
+										<a href="list.html">肝炎用药</a>
+										<a href="list.html">胆囊炎</a>
+										<a href="list.html">胆结石</a>
+										<a href="list.html">舒肝理气类</a>
+										<a href="list.html">降转氨酶</a>
+										<a href="list.html">脂肪肝</a>
+										<a href="list.html">肝病辅助治疗</a>
+										<a href="list.html">肝炎辅助治疗</a>
+										<a href="list.html">肝损伤</a>
+										<a href="list.html">黄疸及黄疸性肝炎</a>
+										<a href="list.html">肝癌辅助治疗</a>
+										<a href="list.html">胰腺炎/癌</a>
+										<a href="list.html">胰腺外分泌不足</a>
+										<a href="list.html">酒精性肝病</a>
+										<a href="list.html">肝功能衰退</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">泌尿科用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">尿路感染用药</a>
+										<a href="list.html">肾炎用药</a>
+										<a href="list.html">肾结石用药</a>
+										<a href="list.html">尿路结石用药</a>
+										<a href="list.html">膀胱炎用药</a>
+										<a href="list.html">肾病综合症</a>
+										<a href="list.html">水肿</a>
+										<a href="list.html">肾衰竭</a>
+										<a href="list.html">尿崩症</a>
+										<a href="list.html">尿毒症</a>
+										<a href="list.html">辅助利尿</a>
+									</dd>
+								</dl>
+			
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">神经系统用药</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">头痛用药</a>
+										<a href="list.html">眩晕</a>
+										<a href="list.html">记忆减退</a>
+										<a href="list.html">老年性痴呆</a>
+										<a href="list.html">面瘫癫痫</a>
+										<a href="list.html">帕金森</a>
+										<a href="list.html">帕金森辅助治疗</a>
+										<a href="list.html">周围神经病变</a>
+										<a href="list.html">植物神经紊乱</a>
+										<a href="list.html">晕动症（晕车船）</a>
+										<a href="list.html">焦虑症（应在精神科用药二级分类）</a>
+										<a href="list.html">神经性疼痛</a>
+										<a href="list.html">肌肉无力萎缩</a>
+										<a href="list.html">神经性呕吐</a>
+										<a href="list.html">神经炎</a>
+										<a href="list.html">酒精中毒</a>
+										<a href="list.html">麻醉用药</a>
+										<a href="list.html">神经系统其他用药</a>
+									</dd>
+								</dl>
+			
+			
+							</div>
+			
+							<div class="menu-box">
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">肿瘤</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">其他病症</a>
+										<a href="list.html">肝癌</a>
+										<a href="list.html">骨髓瘤</a>
+										<a href="list.html">胃癌</a>
+										<a href="list.html">肺癌</a>
+										<a href="list.html">肾癌</a>
+										<a href="list.html">前列腺癌</a>
+										<a href="list.html">肿瘤病辅助</a>
+										<a href="list.html">乳腺癌</a>
+										<a href="list.html">卵巢癌</a>
+										<a href="list.html">淋巴肿瘤</a>
+										<a href="list.html">食道癌</a>
+										<a href="list.html">细胞瘤</a>
+										<a href="list.html">肾脏病</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">调节免疫力</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">免疫调节药物</a>
+									</dd>
+								</dl>
+			
+								<dl class="clear_fix">
+									<dt class="clear_fix">
+										<a href="list.html">器官移植</a>
+										<i class="iconfont icon-arrow-backimg"></i>
+									</dt>
+									<dd>
+										<a href="list.html">抗排异药物</a>
+									</dd>
+								</dl>
+							</div>
+			
+			
+			
+						</div>
+			
+					</div>
+					<ul class="clear_fix">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">新药特药进口药</a>
+						</li>
+						<li>
+							<a href="#">慈善援助</a>
+						</li>
+						<li>
+							<a href="#">慢性疾病</a>
+						</li>
+						<li>
+							<a href="#">常见疾病</a>
+						</li>
+						<li>
+							<a href="#">健康商城</a>
+						</li>
+					</ul>
+			
+				</div>
+			</div>
+		`)
+	
+		$("body").prepend(nav);
+	}
+	addEvent(){
+		$(".pullDown ul li").hover(function(){
+			let index = $(this).index();
+			$(".yMenuListCon").css("display","block");
+			$($(".yMenuListCon").children()[index]).css("display","block");
+			$($(".yMenuListCon").children()[index]).hover(function(){
+				$(".yMenuListCon").css("display","block");
+				$($(".yMenuListCon").children()[index]).css("display","block");
+			},function(){
+				$(".yMenuListCon").css("display","none");
+				$($(".yMenuListCon").children()[index]).css("display","none");
+			})
+		},function(){
+			let index = $(this).index();
+			$(".yMenuListCon").css("display","none");
+			$($(".yMenuListCon").children()[index]).css("display","none");
+			
+		})
 	}
 }
 class footer{

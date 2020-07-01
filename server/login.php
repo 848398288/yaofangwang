@@ -1,6 +1,6 @@
 <?php
-// $usesname = $_POST['usesname'];
-$usesname = "111111";
+$usesname = $_POST['usesname'];
+// $usesname = "111111";
 $password = md5($_POST['password']);
 $link = mysqli_connect('localhost','root','','yaofang');//连接数据库服务器并选择数据库
 mysqli_set_charset($link,"utf8");//设置字符集
