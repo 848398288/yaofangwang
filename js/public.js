@@ -1,3 +1,17 @@
+//判断用户是否登录
+	function isLogin(){
+		if(Cookie.getItem("usesname") != undefined){
+			$("#head-nav .nav").children().eq(0).html(`<span>欢迎你&nbsp;&nbsp;&nbsp;&nbsp;${Cookie.getItem("usesname")}</span>`);
+			$("#head-nav .nav").children().eq(1).html(`<span>注销</span>`);
+			$("#head-nav .nav").children().eq(1).children().eq(0).css({"color":"red","margin-left":"10px"});
+			$("#head-nav .nav").children().eq(1).children().eq(0).click(function(){
+				Cookie.removeItem("usesname");
+				alert("注销成功");
+				window.location.reload();
+			})
+		}
+	}
+
 // 头部的信任区块类
 class trusted {
 	constructor() {
@@ -415,20 +429,20 @@ class nav_all {
 										<i class="iconfont icon-arrow-backimg"></i>
 									</dt>
 									<dd>
-										<a href="list.html">其他病症</a>
-										<a href="list.html">肝癌</a>
-										<a href="list.html">骨髓瘤</a>
-										<a href="list.html">胃癌</a>
-										<a href="list.html">肺癌</a>
-										<a href="list.html">肾癌</a>
-										<a href="list.html">前列腺癌</a>
-										<a href="list.html">肿瘤病辅助</a>
-										<a href="list.html">乳腺癌</a>
-										<a href="list.html">卵巢癌</a>
-										<a href="list.html">淋巴肿瘤</a>
-										<a href="list.html">食道癌</a>
-										<a href="list.html">细胞瘤</a>
-										<a href="list.html">肾脏病</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
+										<a href="list.html?type=1">流行性感冒药</a>
 									</dd>
 								</dl>
 			
@@ -438,7 +452,7 @@ class nav_all {
 										<i class="iconfont icon-arrow-backimg"></i>
 									</dt>
 									<dd>
-										<a href="list.html">免疫调节药物</a>
+										<a href="list.html?type=2">性功能障碍</a>
 									</dd>
 								</dl>
 			

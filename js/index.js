@@ -1,4 +1,5 @@
 $(()=>{
+	// 渲染页面
 	async function createPublicDom() {
 		await new nav_all().init();
 		await new seach().init();
@@ -6,9 +7,9 @@ $(()=>{
 		await new toolbar().init();
 		await new trusted().init();
 		await new footer().init();
+		await isLogin();
 	}
 	createPublicDom();
-	
 	
 	//轮播图内容
 	var mySwiper = new Swiper('.swiper-container', {
@@ -34,7 +35,6 @@ $(()=>{
 		data = data.slice(0, -2);
 		data += "]";
 		data = JSON.parse(data);
-		console.log(data)
 		let strHtml = "";
 		data.forEach(item => {
 			strHtml +=

@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/regAndLogin.css"/>
 		<script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="node_modules/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Cookie.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
 		<title>登录</title>
@@ -42,7 +43,8 @@
 						<input type="text" placeholder="密码" name="" id="login-pass" value="" />
 					</li>
 					<li class="checkBox">
-						<input type="checkbox" name="" id="" value="" />
+						<input type="checkbox"  name="" id="ch" value="" />
+						<label for="ch"><span>7天内免登录</span></label>
 					</li>
 					<button type="button" id="login-btn">登录</button>
 					<li class="other_login">
