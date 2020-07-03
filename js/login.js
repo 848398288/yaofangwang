@@ -11,11 +11,11 @@ $(() => {
 			} else if (data == 1) {
 				alert("登录成功");
 				if($("#ch").is(":checked")){
-					Cookie.setItem("usesname",$("#login-uses").val(),7)
+					Cookie.setItem("usesname",$("#login-uses").val(),7);
 				}else{
 					Cookie.setItem("usesname",$("#login-uses").val())
 				}
-				window.location.href = "index.html";
+				window.history.back();
 			} else {
 				alert("您的账号或者密码有误")
 			}

@@ -216,6 +216,13 @@
       "unicode_decimal": 59000
     },
     {
+      "icon_id": "3354433",
+      "name": "叉",
+      "font_class": "cha",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
       "icon_id": "3900483",
       "name": "药",
       "font_class": "yao",
@@ -240,8 +247,8 @@
       "icon_id": "6187062",
       "name": "右箭头",
       "font_class": "arrow-backimg",
-      "unicode": "e502",
-      "unicode_decimal": 58626
+      "unicode": "e503",
+      "unicode_decimal": 58627
     },
     {
       "icon_id": "7200067",

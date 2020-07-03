@@ -84,9 +84,12 @@ class trusted {
 }
 // 公共右侧菜单栏
 class toolbar {
-	constructor() {}
+	constructor() {
+	}
 	init() {
 		this.createDom();
+		this.addEvent();
+		this.renderingUl();
 	}
 	createDom() {
 		let toolbar = $(
@@ -103,12 +106,12 @@ class toolbar {
 						<span class="cart_num">0</span>
 					</div>
 					<div class="follow">
-						<i class="iconfont icon-wodeguanzhu"></i>
-						<em>我的关注</em>
+						<i class="iconfont icon-zuijinliulan"></i>
+						<em>最近浏览</em>
 					</div>
 					<div class="browse">
-						<i class="iconfont icon-zuijinliulan"></i>
-						<em>最近流浪</em>
+						<i class="iconfont icon-wodeguanzhu"></i>
+						<em>我的收藏</em>
 					</div>
 					<div class="kefu">
 						<i class="iconfont icon-kefu"></i>
@@ -146,10 +149,142 @@ class toolbar {
 				</div>
 			</div>
 			<div class="tool-right">
+				
+				<div class="tr_my">
+					<h2 class="title">
+						<i class="iconfont icon-yonghu"></i>
+						我的账户
+						<i class="iconfont icon-cha float_r" style="margin-right: 30px;"></i>
+					</h2>
+					<p>
+						<em id="myUses">231312</em>
+						<span>您好，欢迎您！！</span>
+					</p>
+				</div>
+				
+				<div class="tr_cart">
+					<h2 class="title">
+						<i class="iconfont icon-danju-zhengque"></i>
+						我的购物车
+						<i class="iconfont icon-cha float_r" style="margin-right: 30px;"></i>
+					</h2>
+					<div class="tr_c_con">
+						
+					</div>
+					
+					<div class="count">
+						<span>
+							<i id="count_num"></i>
+							件商品
+							<b>共计：<em id="count_price"></em></b>
+							
+						</span>
+						<a href="cart.html" class="confirm_btn1">下一步</a>
+					</div>
+				</div>
+				
+			
+				
+				<div class="tr_panel">
+					<h2 class="title">
+						<i class="iconfont icon-danju-zhengque"></i>
+						最近浏览
+						<i class="iconfont icon-cha float_r" style="margin-right: 30px;"></i>
+					</h2>
+					<div class="tr_c_pan">
+						
+						
+					</div>
+				</div>
 			</div>
 		</div>`
 		);
 		$("body").append(toolbar);
+	}
+	
+	addEvent(){
+		$(".tool-tab div:lt(3)").click(function(){
+			let index = $(this).index();
+			$($(".tool-right").children()[index]).css("display","block").siblings().css("display","none");
+			$($($(".toolbar").addClass("posi").children().children()[0]).children()[index]).css("background","red").siblings().css("background","");
+		})
+		$(".icon-cha").click(function(){
+			$($(this).parentsUntil(".toolbar").parent()[0]).removeClass("posi");
+			$(".tool-tab").children().css("background","")
+			
+		})
+		$(".tool-footer .top").click(
+			function(){
+				$("html,body").animate({
+					"scrollTop":'0px'
+				},500)
+			}
+		);
+	}
+	
+	renderingUl(){
+		//渲染我的用户列表
+		if(Cookie.getItem("usesname") != undefined){
+			$("#myUses").text(Cookie.getItem("usesname"));
+			$("#myUses").css({"color":"red","font-size":"20px"})
+		}else{
+			$(".tr_my p").html("您还未登录，点击去<a href='login.html'>登录</a>")
+		}
+		
+		//渲染购物车列表
+		let uses_id = Cookie.getItem("usesname") || "1";
+		$.post("server/selectCartData.php",{"uses_id":uses_id},function(data){
+			if(data == ""){
+				$(".tr_c_con").html("您还未登录哦！请先<a href='login.html'>登录</a>")
+			}else{
+				let strHtml = "";
+				let num = 0;
+				let price = 0;
+				data.forEach(item=>{
+					strHtml += `<dl class="clear_fix">
+							<dt><img src="${item.img}" ></dt>
+							<dd>
+								<span>
+									${item.title}
+								</span>
+								<strong>
+									￥${item.price}
+									<i>×${item.num}</i>
+								</strong>
+							</dd>
+						</dl>`;
+					num += item.num*1;
+					price += (item.num * 1) * (item.price * 1);
+				})
+				$(".tr_c_con").html(strHtml);
+				$("#count_num").text(num);
+				$("#count_price").text(price.toFixed(2));
+				$(".demand .cart_num").text(data.length)
+			}
+		},"json")
+		
+		//渲染最近浏览
+		let data = localStorage.getItem("data") || [];
+		$(".tr_c_pan").html("请先进行收藏");
+		console.log(data)
+		if(data == ""){return}
+		let res = JSON.parse(data);
+		let browsingHtml = ""
+		res.forEach(function(item){
+			browsingHtml += `
+			<dl class="clear_fix">
+				<dt>${item.title}</dt>
+				<dd>
+					<img src="${item.img}" >
+					<span>
+						<b>${item.price}</b>
+						<em>查看详情</em>
+					</span>
+				</dd>
+			</dl>
+			`;
+		})
+		$(".tr_c_pan").html(browsingHtml);
 	}
 }
 

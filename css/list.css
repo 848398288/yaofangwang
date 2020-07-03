@@ -196,14 +196,21 @@
 	float: left;
 	padding: 0 10px;
 }
+.defu ul li:hover{
+	/* background-color: red; */
+	
+}
+.back{
+	background-color: red;
+}
 .defu ul li a{
 	font-size: 12px;
 	line-height: 12px;
-	color: #999;
+	color: #000;
 }
 .defu ul li i{
 	font-size: 14px;
-	color: #999;
+	color: #000;
 	vertical-align: middle;
 }
 .defu .defu-page{

@@ -6,14 +6,51 @@
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="css/public.css" />
 		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/cart.css" />
 		<link rel="stylesheet" type="text/css" href="node_modules/swiper/css/swiper.min.css" />
 		<script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="node_modules/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Cookie.js" type="text/javascript" charset="utf-8"></script>
 		<title>购物车</title>
 	</head>
 	<body>
-		
+		<div class="cart_content w">
+			<div class="tit_1">
+				我的需求清单
+				<span>全部商品(<i id="allGnum">5</i>)</span>
+				<span>如您所选的商品中包含处方药，您加入需求清单以后，展示药品信息的门店药师会与您联系，并会提醒您在购买时所需要的处方单等相关资料。</span>
+			</div>
+
+			<div class="tit_2">
+				<span class="w1"><input type="checkbox" class="all"/>全选</span>
+				<span class="w2">商品信息</span>
+				<strong>单价</strong>
+				<strong>数量</strong>
+				<strong>小计</strong>
+				<strong>库存状态</strong>
+				<strong>操作</strong>
+
+			</div>
+			<!-- 购物车列表 -->
+			<div id="a">
+				
+			</div>
+			
+			
+			<!-- 结算条 -->
+			<div class="foot">
+				<div class="cart_btn">
+					下一步
+				</div>
+				<div class="tol">
+					<span>共<b id="number">0</b>件商品</span>
+					<span>优惠:<i>￥</i><b id="save">0.00</b></span>
+					<span>总计(不含配送服务费): <i>￥</i><b id="sunum">0.00</b></span>
+				</div>
+			</div>
+			
+		</div>
 	</body>
 </html>

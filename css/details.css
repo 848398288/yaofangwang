@@ -237,6 +237,7 @@
 	text-align: center;
 }
 .btn1{
+	outline: none;
 	font-size: 18px;
 	font-weight: 700;
 	color: #fff;
@@ -246,6 +247,7 @@
 	line-height: 50px;
 	display: block;
 	border: none;
+	margin-top: 30px;
 	cursor: pointer;
 }
 .de_con_right img{

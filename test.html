@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
-	</head>
-	<body>
-		
-	</body>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            
+            td {
+                border: 1px solid #000000;
+                width: 100px;
+                height: 30px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <label for="allCheck">全选</label><br><input id="allCheck" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="check0" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="check1" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="check2" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="check3" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="check4" type="checkbox">
+                </td>
+            </tr>
+        </table>
+        <script>
+            var allcheck = document.getElementById("allCheck")
+            allcheck.addEventListener("click",clickHandler)
+            for(var i=0;i<5;i++){
+                var check = document.getElementById("check"+i)
+                check.addEventListener("click",clickHandler);
+            }
+            
+            function clickHandler(){
+                if(allcheck === this){
+                    for(var i=0;i<5;i++){
+                        var check = document.getElementById("check"+i);
+                        check.checked = allcheck.checked;
+                    }
+                    return;
+                }
+                for(var j=0;j<5;j++){
+                    var checks = document.getElementById("check"+j);
+                    if(!checks.checked){
+                        allcheck.checked = false;
+                        return;
+                    }
+                }
+                allcheck.checked = true;
+            }
+        </script>
+    </body>
 </html>
