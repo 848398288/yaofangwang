@@ -107,11 +107,11 @@ class toolbar {
 					</div>
 					<div class="follow">
 						<i class="iconfont icon-zuijinliulan"></i>
-						<em>最近浏览</em>
+						<em>我的收藏</em>
 					</div>
 					<div class="browse">
 						<i class="iconfont icon-wodeguanzhu"></i>
-						<em>我的收藏</em>
+						<em>最近浏览</em>
 					</div>
 					<div class="kefu">
 						<i class="iconfont icon-kefu"></i>
@@ -266,7 +266,6 @@ class toolbar {
 		//渲染最近浏览
 		let data = localStorage.getItem("data") || [];
 		$(".tr_c_pan").html("请先进行收藏");
-		console.log(data)
 		if(data == ""){return}
 		let res = JSON.parse(data);
 		let browsingHtml = ""
