@@ -44,16 +44,16 @@ $(() => {
 		  			<div class="detail_items">
 		  				<ul>
 		  					<li>
-		  						<img src="img/big_1.jpg" >
+		  						<img src="${data.img}" >
 		  					</li>
 		  					<li>
-		  						<img src="img/big_1.jpg" >
+		  						<img src="${data.img}" >
 		  					</li>
 		  					<li>
-		  						<img src="img/big_1.jpg" >
+		  						<img src="${data.img}" >
 		  					</li>
 		  					<li>
-		  						<img src="img/big_1.jpg" >
+		  						<img src="${data.img}" >
 		  					</li>
 		  				</ul>
 		  			</div>

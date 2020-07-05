@@ -1,16 +1,47 @@
 //判断用户是否登录
-	function isLogin(){
-		if(Cookie.getItem("usesname") != undefined){
-			$("#head-nav .nav").children().eq(0).html(`<span>欢迎你&nbsp;&nbsp;&nbsp;&nbsp;${Cookie.getItem("usesname")}</span>`);
-			$("#head-nav .nav").children().eq(1).html(`<span>注销</span>`);
-			$("#head-nav .nav").children().eq(1).children().eq(0).css({"color":"red","margin-left":"10px"});
-			$("#head-nav .nav").children().eq(1).children().eq(0).click(function(){
-				Cookie.removeItem("usesname");
-				alert("注销成功");
-				window.location.reload();
-			})
-		}
+function isLogin() {
+	if (Cookie.getItem("usesname") != undefined) {
+		$("#head-nav .nav").children().eq(0).html(`<span>欢迎你&nbsp;&nbsp;&nbsp;&nbsp;${Cookie.getItem("usesname")}</span>`);
+		$("#head-nav .nav").children().eq(1).html(`<span>注销</span>`);
+		$("#head-nav .nav").children().eq(1).children().eq(0).css({
+			"color": "red",
+			"margin-left": "10px"
+		});
+		$("#head-nav .nav").children().eq(1).children().eq(0).click(function() {
+			Cookie.removeItem("usesname");
+			alert("注销成功");
+			window.location.reload();
+		})
 	}
+}
+
+function a() {
+	let data = localStorage.getItem("data") || [];
+	$(".tr_c_pan").html("请先进行收藏");
+	if (data == "") {
+		return
+	}
+	let res = JSON.parse(data);
+	res.reverse();
+	let browsingHtml = ""
+	res.forEach(function(item) {
+		browsingHtml +=
+			`
+				<dl class="clear_fix">
+					<dt>${item.title}</dt>
+					<dd>
+						<img src="${item.img}" >
+						<span>
+							<b>${item.price}</b>
+							<em>查看详情</em>
+						</span>
+					</dd>
+				</dl>
+				`;
+	})
+	$(".tr_c_pan").html(browsingHtml);
+}
+
 
 // 头部的信任区块类
 class trusted {
@@ -84,8 +115,7 @@ class trusted {
 }
 // 公共右侧菜单栏
 class toolbar {
-	constructor() {
-	}
+	constructor() {}
 	init() {
 		this.createDom();
 		this.addEvent();
@@ -106,11 +136,11 @@ class toolbar {
 						<span class="cart_num">0</span>
 					</div>
 					<div class="follow">
-						<i class="iconfont icon-zuijinliulan"></i>
+						<i class="iconfont icon-wodeguanzhu"></i>
 						<em>我的收藏</em>
 					</div>
 					<div class="browse">
-						<i class="iconfont icon-wodeguanzhu"></i>
+						<i class="iconfont icon-zuijinliulan"></i>
 						<em>最近浏览</em>
 					</div>
 					<div class="kefu">
@@ -201,47 +231,54 @@ class toolbar {
 		);
 		$("body").append(toolbar);
 	}
-	
-	addEvent(){
-		$(".tool-tab div:lt(3)").click(function(){
+
+	addEvent() {
+		$(".tool-tab div:lt(3)").click(function() {
 			let index = $(this).index();
-			$($(".tool-right").children()[index]).css("display","block").siblings().css("display","none");
-			$($($(".toolbar").addClass("posi").children().children()[0]).children()[index]).css("background","red").siblings().css("background","");
+			$($(".tool-right").children()[index]).css("display", "block").siblings().css("display", "none");
+			$($($(".toolbar").addClass("posi").children().children()[0]).children()[index]).css("background", "red").siblings()
+				.css("background", "");
 		})
-		$(".icon-cha").click(function(){
+		$(".icon-cha").click(function() {
 			$($(this).parentsUntil(".toolbar").parent()[0]).removeClass("posi");
-			$(".tool-tab").children().css("background","")
-			
+			$(".tool-tab").children().css("background", "")
+
 		})
 		$(".tool-footer .top").click(
-			function(){
+			function() {
 				$("html,body").animate({
-					"scrollTop":'0px'
-				},500)
+					"scrollTop": '0px'
+				}, 500)
 			}
 		);
 	}
-	
-	renderingUl(){
+
+	renderingUl() {
 		//渲染我的用户列表
-		if(Cookie.getItem("usesname") != undefined){
+		if (Cookie.getItem("usesname") != undefined) {
 			$("#myUses").text(Cookie.getItem("usesname"));
-			$("#myUses").css({"color":"red","font-size":"20px"})
-		}else{
+			$("#myUses").css({
+				"color": "red",
+				"font-size": "20px"
+			})
+		} else {
 			$(".tr_my p").html("您还未登录，点击去<a href='login.html'>登录</a>")
 		}
-		
+
 		//渲染购物车列表
 		let uses_id = Cookie.getItem("usesname") || "1";
-		$.post("server/selectCartData.php",{"uses_id":uses_id},function(data){
-			if(data == ""){
+		$.post("server/selectCartData.php", {
+			"uses_id": uses_id
+		}, function(data) {
+			if (data == "") {
 				$(".tr_c_con").html("您还未登录哦！请先<a href='login.html'>登录</a>")
-			}else{
+			} else {
 				let strHtml = "";
 				let num = 0;
 				let price = 0;
-				data.forEach(item=>{
-					strHtml += `<dl class="clear_fix">
+				data.forEach(item => {
+					strHtml +=
+						`<dl class="clear_fix">
 							<dt><img src="${item.img}" ></dt>
 							<dd>
 								<span>
@@ -253,7 +290,7 @@ class toolbar {
 								</strong>
 							</dd>
 						</dl>`;
-					num += item.num*1;
+					num += item.num * 1;
 					price += (item.num * 1) * (item.price * 1);
 				})
 				$(".tr_c_con").html(strHtml);
@@ -261,29 +298,10 @@ class toolbar {
 				$("#count_price").text(price.toFixed(2));
 				$(".demand .cart_num").text(data.length)
 			}
-		},"json")
-		
+		}, "json")
+
 		//渲染最近浏览
-		let data = localStorage.getItem("data") || [];
-		$(".tr_c_pan").html("请先进行收藏");
-		if(data == ""){return}
-		let res = JSON.parse(data);
-		let browsingHtml = ""
-		res.forEach(function(item){
-			browsingHtml += `
-			<dl class="clear_fix">
-				<dt>${item.title}</dt>
-				<dd>
-					<img src="${item.img}" >
-					<span>
-						<b>${item.price}</b>
-						<em>查看详情</em>
-					</span>
-				</dd>
-			</dl>
-			`;
-		})
-		$(".tr_c_pan").html(browsingHtml);
+		a();
 	}
 }
 
@@ -483,7 +501,8 @@ class nav_all {
 		this.addEvent();
 	}
 	createDom() {
-		let nav = $(`
+		let nav = $(
+			`
 			<div id="head-wrap">
 				<div class="header-wrapper w clear_fix">
 					<div class="nav-all">
@@ -1417,31 +1436,32 @@ class nav_all {
 			
 				</div>
 			</div>
-		`)
-	
+		`
+		)
+
 		$("body").prepend(nav);
 	}
-	addEvent(){
-		$(".pullDown ul li").hover(function(){
+	addEvent() {
+		$(".pullDown ul li").hover(function() {
 			let index = $(this).index();
-			$(".yMenuListCon").css("display","block");
-			$($(".yMenuListCon").children()[index]).css("display","block");
-			$($(".yMenuListCon").children()[index]).hover(function(){
-				$(".yMenuListCon").css("display","block");
-				$($(".yMenuListCon").children()[index]).css("display","block");
-			},function(){
-				$(".yMenuListCon").css("display","none");
-				$($(".yMenuListCon").children()[index]).css("display","none");
+			$(".yMenuListCon").css("display", "block");
+			$($(".yMenuListCon").children()[index]).css("display", "block");
+			$($(".yMenuListCon").children()[index]).hover(function() {
+				$(".yMenuListCon").css("display", "block");
+				$($(".yMenuListCon").children()[index]).css("display", "block");
+			}, function() {
+				$(".yMenuListCon").css("display", "none");
+				$($(".yMenuListCon").children()[index]).css("display", "none");
 			})
-		},function(){
+		}, function() {
 			let index = $(this).index();
-			$(".yMenuListCon").css("display","none");
-			$($(".yMenuListCon").children()[index]).css("display","none");
-			
+			$(".yMenuListCon").css("display", "none");
+			$($(".yMenuListCon").children()[index]).css("display", "none");
+
 		})
 	}
 }
-class footer{
+class footer {
 	constructor() {}
 	init() {
 		this.createDom();

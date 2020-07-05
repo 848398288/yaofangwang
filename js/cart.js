@@ -167,17 +167,22 @@ $(() => {
 			$.post("server/cartPrev.php",{"id":id,"num":num},()=>{
 				$(this).next().val(num);
 				let danjia = $.trim($(this).parent().prev().text()).split("￥")[1];
-				$(this).parent().next().text(((danjia*1) * num).toFixed(2))
+				$(this).parent().next().text(((danjia*1) * num).toFixed(2));
+				if($(this).parent().siblings(".check").children().prop("checked")){
+					total();
+				}
 			})
 		})
 		$(".add").click(function(){
 			let num = $(this).prev().val()*1+1;
 			let id = $(this).next().text();
-			console.log(id)
 			$.post("server/cartPrev.php",{"id":id,"num":num},()=>{
 				$(this).prev().val(num);
 				let danjia = $.trim($(this).parent().prev().text()).split("￥")[1];
-				$(this).parent().next().text(((danjia*1) * num).toFixed(2))
+				$(this).parent().next().text(((danjia*1) * num).toFixed(2));
+				if($(this).parent().siblings(".check").children().prop("checked")){
+					total();
+				}
 			})
 		})
 		

@@ -75,6 +75,7 @@ $(() => {
 			   </div>`;
 			})
 			oUl.html(strHtml);
+			b();
 			
 			$(".defu li").click(function(){
 				$(this).addClass("back").siblings("li").removeClass("back");
@@ -108,6 +109,7 @@ $(() => {
 						   </div>`;
 						})
 						oUl.html(str);
+						b();
 					addCollectEvent();
 					},"json")
 				}else{
@@ -142,8 +144,9 @@ $(() => {
 						   </div>`;
 						})
 						oUl.html(str);
+						b();
+						addCollectEvent();
 					},"json")
-					addCollectEvent();
 				}
 			})
 			
@@ -158,8 +161,8 @@ $(() => {
 	
 	
 	function addCollectEvent(){
-		let box = JSON.parse(localStorage.getItem("data")) || []; //创建一个数组来装加入购物车的数据
 		$(".collect_btn").click(function(){
+		let box = JSON.parse(localStorage.getItem("data")) || []; //创建一个数组来装加入购物车的数据
 			let img = $(this).parent().siblings(".drug_item_img").find("img")[0].src;
 			let title = $(this).parent().siblings("a").text();
 			let price = $(this).parent().siblings("i").text();
@@ -175,13 +178,39 @@ $(() => {
 				box.push(obj);
 				localStorage.setItem("data", JSON.stringify(box));
 				alert("收藏成功");
-				location=location;
+				$(this).addClass("collect_btn_active").children("i").addClass("collect_i_active").next().text("已收藏");
+				a();
 			}else{
-				alert("亲，您已经收藏过该商品了！！")
+				$(this).removeClass("collect_btn_active").children("i").removeClass("collect_i_active").next().text("收藏");
+				let boxa = JSON.parse(localStorage.getItem("data")) || []; //创建一个数组来装加入购物车的数据
+				localStorage.removeItem("data")
+				let id = $(this).next().text();
+				let res = boxa.filter(function(item){
+					return item.id != id
+				})
+				console.log(22)
+				localStorage.setItem("data", JSON.stringify(res));
+				a();
 			}
 		})
 		
 	}
+	
+	//处理收藏按钮高亮
+	function b(){
+		let id = $(".drug_item b").each(function(index,item){
+			let id = item.innerText;
+			let data = localStorage.getItem("data") || [];
+			let res = JSON.parse(data);
+			res.forEach((item) =>{
+				if(item.id == id){
+					$(this).prev().addClass("collect_btn_active").children("i").addClass("collect_i_active").next().text("已收藏");
+				}
+			})
+			
+		})
+	}
+	
 	
 	//判断是否添加到缓存里
 	function isAdd(arr,id){

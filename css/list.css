@@ -386,6 +386,10 @@
 	color: #5b5b5b;
 	display: block;
 	font-size: 12px;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	padding-top: 10px;
 }
 .cla_drug_border .drug_item .drug_action{
@@ -402,6 +406,13 @@
 	color: #ff6666;
 	border: 1px solid #ddd;
 	font-size: 12px;
+}
+.cla_drug_border .drug_item .drug_action .collect_btn_active{
+	background-color: red;
+	color: #fff;
+}
+.cla_drug_border .drug_item .drug_action .collect_i_active{
+	color: #fff;
 }
 .cla_drug_border .drug_item .drug_action a:hover:nth-of-type(1),.cla_drug_border .drug_item .drug_action a:hover:nth-of-type(1) i{
 	background-color: red;
